@@ -32,51 +32,42 @@ export default function Home() {
       <h1 className='text-3xl text-center'>
         Top Movers
       </h1>
-      <div className='w-1/2 flex flex-col gap-6'>
+      <div className='w-1/2 flex flex-col gap-6 border-2 p-2 rounded-md h-[75vh] overflow-auto'>
         <Link href={`/view/${'bitcoin'}`}>
-          <Card className='p-12 h-[150px] hover:scale-[1.02] transition-all duration-100'>
+          <div className='p-8 h-[15px] flex items-center hover:scale-[1.02] transition-all border rounded-md duration-100'>
             <h2>
               Bitcoin
             </h2>
-            <img src={bitcoin.src}></img>
-          </Card>
+            {/* <img src={bitcoin.src}></img> */}
+          </div>
         </Link>
-        <Card className='p-12 h-[150px] hover:scale-[1.02] transition-all duration-100'>
-        
+        <div className='p-8 flex items-center h-[15px] hover:scale-[1.02] transition-all border rounded-md duration-100'>
           Ethereum
-        </Card>
-        <Card className='p-12 h-[150px] hover:scale-[1.02] transition-all duration-100'>
-        
+        </div>
+        <div className='p-8 h-[15px] flex items-center hover:scale-[1.02] transition-all border rounded-md duration-100'>
           Binance Coin
-        </Card>
-        <Card className='p-12 h-[150px] hover:scale-[1.02] transition-all duration-100'>
-        
+        </div>
+        <div className='p-8 h-[15px] flex items-center hover:scale-[1.02] transition-all border rounded-md duration-100'>
           Cardano
-        </Card>
-        <Card className='p-12 h-[150px] hover:scale-[1.02] transition-all duration-100'>
-        
+        </div>
+        <div className='p-8 h-[15px] flex items-center hover:scale-[1.02] transition-all border rounded-md duration-100'>
           Tether
-        </Card>
-        <Card className='p-12 h-[150px] hover:scale-[1.02] transition-all duration-100'>
-        
+        </div>
+        <div className='p-8 h-[15px] flex items-center hover:scale-[1.02] transition-all border rounded-md duration-100'>
           Solana
-        </Card>
-        <Card className='p-12 h-[150px] hover:scale-[1.02] transition-all duration-100'>
-        
+        </div>
+        <div className='p-8 h-[15px] flex items-center hover:scale-[1.02] transition-all border rounded-md duration-100'>
           Ripple
-        </Card>
-        <Card className='p-12 h-[150px] hover:scale-[1.02] transition-all duration-100'>
-        
+        </div>
+        <div className='p-8 h-[15px] flex items-center hover:scale-[1.02] transition-all border rounded-md duration-100'>
           Polkadot
-        </Card>
-        <Card className='p-12 h-[150px] hover:scale-[1.02] transition-all duration-100'>
-        
+        </div>
+        <div className='p-8 h-[15px] flex items-center hover:scale-[1.02] transition-all border rounded-md duration-100'>
           Dogecoin
-        </Card>
-        <Card className='p-12 h-[150px] hover:scale-[1.02] transition-all duration-100'>
-        
+        </div>
+        <div className='p-8 h-[15px] flex items-center hover:scale-[1.02] transition-all border rounded-md duration-100'>
           Chainlink
-        </Card>
+        </div>
       </div>
     </div>
   )

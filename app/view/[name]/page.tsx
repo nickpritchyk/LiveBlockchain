@@ -81,53 +81,53 @@ export default function ViewCrypto({ params }: { params: { name: string } }) {
 
   function handleConnectedToast() {
     toast({
-      title: "Blockchain: Connected",
+      title: "Blockchain Socket: Connected",
       description: "Real-Time Data Incoming",
     })
   }
 
   return (
-    <div className={`${sideNav ? 'ml-[300px]' : 'ml-0'} w-full transition-all duration-300 items-center my-12 flex flex-col gap-6`}>
-      <h1 className='text-5xl'>
-        {params.name}
+    <div className={`${sideNav ? 'ml-[300px]' : 'ml-0'} w-full transition-all duration-300 items-center my-8 flex flex-col gap-4`}>
+      <h1 className='text-4xl'>
+        {(params.name).charAt(0).toUpperCase() + params.name.slice(1)}
       </h1>
-      {!data ?
-        <div className='flex flex-col gap-2 items-center'>
-          <Skeleton className='text-red-600 text-3xl w-[350px] h-[50px]'></Skeleton>
-          <Skeleton className='text-red-600 text-3xl w-[150px] h-[35px]'></Skeleton>
-        </div>
-        :
-        <>
-        {/* <div className='flex flex-col gap-2 items-center'>
-          {data && (data.taker_side === 'BUY') ?
-            <>
-              <h2 className='text-green-600 text-3xl'>
+        <div className='flex flex-col items-center'>
+          {data && (data.taker_side === 'BUY') &&
+            <div className='flex gap-2 items-center'>
+              <h2 className='text-green-600 text-xl'>
                 <i className='text-black font-medium'> $ </i>
-                {data?.price}
+                {(data?.price)?.toLocaleString()}
               </h2>
               <p>
-                + {data?.size} BTC
+                +{data?.size} BTC
               </p>
-            </>
-            :
-            <>
-              <h2 className='text-red-600 text-3xl'>
-                <i className='text-black font-medium'> $ </i>
-                {data?.price}
-              </h2>
-              <p>
-                - {data?.size} BTC
-              </p>
-            </>
+            </div>
           }
-        </div> */}
+          {data && (data.taker_side === 'SELL') &&
+            <div className='flex gap-2 items-center'>
+              <h2 className='text-red-600 text-xl'>
+                <i className='text-black font-medium'> $ </i>
+                {(data?.price)?.toLocaleString()}
+              </h2>
+              <p>
+                -{data?.size} BTC
+              </p>
+            </div>
+          }
+        </div>
         <div className='w-[80%] h-[75vh] px-8'>
+          {data ?
           <Line
             data={chartData} // Use updated chart data
           />
+          :
+          <Skeleton className='bg-yellow-200 opacity-25 text-3xl flex items-center justify-center max-w-[75vw] h-[75vh]'>
+            <p className='text-sm text-black'>
+              Loading data..
+            </p>
+          </Skeleton>
+          }
         </div>
-      </>
-      }
     </div>
   )
 }
